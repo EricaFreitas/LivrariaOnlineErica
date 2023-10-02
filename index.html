@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria Online</title>
+    <link rel="stylesheet" href="livros.css">
+</head>
+<body>
+    <h1>Bem-vindo à Livraria Online</h1>
+    <p>Insira o valor total da sua compra:</p>
+    <input type="number" id="valorCompra" placeholder="Insira o valor em R$">
+    <button onclick="calcularDesconto()">Calcular Desconto</button>
+    <p>Desconto aplicado: <span id="desconto"></span></p>
+
+    <main>
+        <ul class="produtos">
+          <li>
+            <h2>A Névoa da Floresta</h2>
+          <img src="livro1.jpg" id="livros">
+        </li>
+        <li>
+            <h2>Sussuros na Floresta</h2>
+          <img src="livro2.jpg" id="livros">
+        </li>
+        <li>
+          <h2>Fora de Circuito</h2>
+          <img src="livro3.jpg" id="livro">
+         </li>
+        </ul>
+      </main>
+
+    <script>
+        function calcularDesconto() {
+            const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+
+            let desconto = 0;
+
+            if(valorCompra > 200) {
+                desconto = 0.2; // 20%
+            } else if (valorCompra > 100) {
+                desconto = 0.1; // 10%
+            } else if (valorCompra <= 100) {
+                desconto = 0.05; // 5%
+            }
+
+
+            const valorDesconto = valorCompra * desconto;
+            document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
