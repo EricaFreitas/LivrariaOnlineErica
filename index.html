@@ -30,25 +30,28 @@
          </li>
         </ul>
       </main>
-
-    <script>
-        function calcularDesconto() {
-            const valorCompra = parseFloat(document.getElementById('valorCompra').value);
-
-            let desconto = 0;
-
-            if(valorCompra > 200) {
-                desconto = 0.2; // 20%
-            } else if (valorCompra > 100) {
-                desconto = 0.1; // 10%
-            } else if (valorCompra <= 100) {
-                desconto = 0.05; // 5%
-            }
-
-
-            const valorDesconto = valorCompra * desconto;
-            document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
-        }
-    </script>
+      <input type="button" value="Clique Aqui" onclick="msg()">
+      <script>
+          function msg() {
+                  alert("Você clicou no botão!");
+              }
+  
+          function calcularDesconto() {
+              const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+  
+              let desconto = 0;
+  
+              if(valorCompra > 200) {
+                  desconto = 0.2; // 20%
+              } else if (valorCompra > 100) {
+                  desconto = 0.1; // 10%
+              }else if (valorCompra <= 100) {
+                  desconto = 0.05; // 5%
+              }
+  
+              const valorDesconto = valorCompra * desconto;
+              document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
+          }
+      </script>
 </body>
 </html>
